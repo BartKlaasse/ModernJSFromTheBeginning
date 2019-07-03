@@ -678,6 +678,51 @@ function IfthisComparison() {
   else console.log("incorrect");
 }
 
+// Switches
+
+function SwitchMethod() {
+  const colour = "blue";
+
+  switch (colour) {
+    case "red":
+      console.log("colour is red");
+      break;
+    case "blue":
+      console.log("colour is blue");
+      break;
+    default:
+      console.log("colour is not red or blue");
+      break;
+  }
+
+  let day;
+
+  switch (new Date().getDate()) {
+    case 0:
+      day = "sunday";
+      break;
+    case 1:
+      day = "monday";
+      break;
+    case 2:
+      day = "tuesday";
+      break;
+    case 3:
+      day = "wednesday";
+      break;
+    case 4:
+      day = "thursday";
+      break;
+    case 5:
+      day = "friday";
+      break;
+    case 6:
+      day = "saturday";
+      break;
+  }
+  console.log(`today is ${day}`);
+}
+
 // ConsoleLogFunctions();
 // Vars()
 // Lets()
@@ -691,4 +736,5 @@ function IfthisComparison() {
 // TemplateLiterals()
 // ArrayMethods();
 // ObjectLiterals();
-IfthisComparison();
+// IfthisComparison();
+// SwitchMethod();
