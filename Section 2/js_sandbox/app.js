@@ -148,42 +148,42 @@ En al het andere....
 */
 
 function PrimitiveDataTypes() {
-  //We gaan met de functie typeof het type van de variabele naar de console loggen
+  // We gaan met de functie typeof het type van de variabele naar de console loggen
 
-  //String
+  // String
   const name = "John doe";
   console.log(typeof name);
 
-  //Number
+  // Number
   const age = 45;
   console.log(typeof age);
 
-  //boolean
+  // boolean
   const hasKids = true;
   console.log(typeof hasKids);
 
-  //null (genereert het type object)
+  // null (genereert het type object)
   const car = null;
   console.log(typeof car);
 
-  //undefined
+  // undefined
   let test;
   console.log(typeof test);
 
-  //symbol
+  // symbol
   const sym = Symbol();
   console.log(typeof sym);
 }
 
 function referenceDataTypes() {
-  //We gaan met de functie typeof het type van de variabele naar de console loggen
+  // We gaan met de functie typeof het type van de variabele naar de console loggen
   // deze zijn allemaal het data type object
 
-  //Array
+  // Array
   const hobbies = ["movies", "music"];
   console.log(typeof hobbies);
 
-  //Object literal
+  // Object literal
   const adress = {
     city: "Amsterdam",
     land: "Nederland"
@@ -195,4 +195,62 @@ function referenceDataTypes() {
   console.log(typeof today);
 }
 
-referenceDataTypes();
+// Type conversion
+function TypeConversion() {
+  //Het veranderen van datatypes
+
+  let val;
+
+  // Number to string
+  val = String(55);
+  val = String(4 + 4);
+
+  // Bool to string
+  val = String(true);
+
+  // Date to string
+  val = String(new Date());
+
+  // Array to string
+  val = String([1, 2, 3, 4]);
+
+  // number to string
+  val = (5).toString();
+
+  //Boolean to string
+  val = true.toString();
+
+  // Strings to number
+  val = Number("52");
+
+  // Number to boolean
+  val = Number(true);
+  val = Number(false);
+  val = Number(null);
+  val = Number("Hello"); // Famous NaN error here :)
+  val = Number([1, 2, 3]);
+
+  // ParseInt maakt er een Int van, dus geen cijfers achter de komma
+  val = parseInt("100");
+  val = parseInt("100.30");
+
+  //ParseFloat maakt er een getal van met cijfers achter de komma
+  val = parseFloat("11.2101");
+
+  //Output
+  console.log(val);
+  console.log(typeof val);
+  console.log(val.length);
+  console.log(val.toFixed());
+}
+function typeCohersion() {
+  // Als we 2 values bij elkaar optellen en 1 van de values is een string dan word de andere value ook een string
+  const val1 = "5";
+  const val2 = 5;
+  const sum = val1 + val2;
+  // Dit geeft als log een string 55
+
+  console.log(sum);
+  console.log(typeof sum);
+}
+typeCohersion();
