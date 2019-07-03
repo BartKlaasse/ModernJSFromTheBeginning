@@ -538,6 +538,45 @@ function ObjectLiterals() {
   console.log(val);
 }
 
+// Dates & Times les 14
+
+function DatesTimes() {
+  let val;
+  // Huidige tijd/dag ophalen
+  const today = new Date();
+  // Let op er word gebruik gemaakt van amerikaanse notatie
+  let birthday = new Date("12-27-1994 11:31:00");
+  birthday = new Date("September 10 1981");
+  birthday = new Date("9/9/1229");
+  // val = today.getMonth(); Haalt de huidige maand op. de output is 0 based index. dus maand 12 word weergegeven als maand 11
+
+  val = today.getMonth();
+  val = today.getDate();
+  val = today.getDay();
+  val = today.getFullYear();
+  val = today.getHours();
+  val = today.getMinutes();
+  val = today.getSeconds();
+  val = today.getMilliseconds();
+  val = today.getTimezoneOffset();
+  val = today.getTime();
+
+  birthday.setMonth(2);
+  birthday.setDate(12);
+  birthday.setFullYear(1223);
+  birthday.setHours(14);
+  birthday.setMinutes(22);
+  birthday.setSeconds(2);
+
+  console.log(birthday);
+}
+
+// If Statements & Comparison operators
+
+function IfthisComparison(){
+
+}
+
 // ConsoleLogFunctions();
 // Vars()
 // Lets()
@@ -551,3 +590,4 @@ function ObjectLiterals() {
 // TemplateLiterals()
 // ArrayMethods();
 // ObjectLiterals();
+IfthisComparison();
