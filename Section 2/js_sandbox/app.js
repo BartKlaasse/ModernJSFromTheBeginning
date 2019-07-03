@@ -296,4 +296,81 @@ val = Math.floor(Math.random() * 20 + 1);
 console.log(val)
 console.log(typeof val);
 }
-quickMath()
+
+// Les 10 String methods en Concatenation
+
+function stringingStringsTogether(){
+
+const firstName = 'Bart';
+const lastName = 'Klaasse';
+const age = 24;
+const str = 'Hoi ik heet Bart Klaasse';
+const tags = 'Javascript,C#,Pannenkoekenbakker'
+
+
+let val;
+
+// Samenvoegen
+val = firstName + lastName;
+
+// Concatenation voorbeeld
+val = firstName + ' ' + lastName; 
+
+// Appending to string
+val = 'Brad '
+val += 'Traversy';
+
+val = 'Hoi ik heet ' + firstName + ' en ik ben ' + age;
+
+// Escaping van een special character zoals quote characters
+val = 'Wauw dat i\'s cool, ik kan niet wachten'
+
+// Length property/method
+val = firstName.length;
+
+// Concat method
+val = firstName.concat(' ',lastName);
+
+// touppercase method
+val = firstName.toUpperCase();
+val = firstName.toLowerCase();
+
+// Strings benaderen als read only array
+val = firstName[2];
+
+// IndexOf method, eerste index van een karakter vinden
+val = lastName.indexOf('a');
+
+// LastIndexOf method, laatste index van een karakter vinden
+val = lastName.lastIndexOf('a');
+
+// CharAt  het omgekeerde van index of
+val = firstName.charAt('2');
+
+// Laatste karakter van de string
+val = firstName.charAt(firstName.length - 1);
+
+// Substring ophalen
+val = firstName.substring(0,3);
+
+// Slice het opdelen van een string
+val = firstName.slice(0,3);
+
+// Inverted slice
+val = firstName.slice(-2);
+
+// Split , een string opsplitsen naar een array
+val = str.split(' ');
+val = tags.split(',');
+
+// Replace
+val = str.replace('Bart', 'SuperBart')
+
+// Includes
+val = str.includes('Hoi');
+val = str.includes('Pannenkoek');
+
+console.log(val);
+}
+
+stringingStringsTogether();
