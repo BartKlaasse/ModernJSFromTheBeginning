@@ -10,7 +10,7 @@ function ConsoleLogFunctions() {
   // In deze functie zitten verschillende console.log functies
 
   // Alert (Geen onderdeel van console.log)
-  alert("test");
+  // alert("test");
 
   // Console clearen
   console.clear();
@@ -454,7 +454,7 @@ function ArrayMethods() {
   numbers.shift();
 
   // Splice values
-  numbers.splice(2,1)
+  numbers.splice(2, 1);
 
   // Reverse array
   numbers.reverse();
@@ -466,32 +466,88 @@ function ArrayMethods() {
   val = fruit.sort();
   // Sort array op numbers werkt alleen voor het eerste getal bijvoorbeeld 1,11,13,12,2,22,25,23
   val = numbers.sort();
-  
+
   // Numbered Array sorteren met compare functie
-  val = numbers.sort(function(x,y){
-    return x - y ;
+  val = numbers.sort(function(x, y) {
+    return x - y;
   });
 
   // Reverse sort
-  val = numbers.sort(function(x,y){
-    return y - x ;
+  val = numbers.sort(function(x, y) {
+    return y - x;
   });
 
   // Find first in array less then 50
-  function under50(num){
+  function under50(num) {
     return num < 50;
   }
   val = numbers.find(under50);
 
   // Find first in array greater then 50
-  function under50(num){
+  function under50(num) {
     return num > 50;
   }
   val = numbers.find(under50);
-
 
   console.log(numbers);
   console.log(val);
 }
 
-ArrayMethods();
+// Object literals Les 13
+
+function ObjectLiterals() {
+  // maakt een object literal aan
+  const person = {
+    firstName: "Bart",
+    lastName: "Klaasse",
+    age: 24,
+    mail: "bart@bart.bart",
+    hobbies: ["gaming", "sailing"],
+    adress: {
+      city: "den helder",
+      land: "nederland"
+    },
+    getBirthYear: function() {
+      // om de huidige age van het object op te halen kan je niet gebruik maken van de age variabele
+      // je moet gebruik maken van het this keyword om te referen naar dit object
+      return 2019 - this.age;
+    }
+  };
+
+  let val;
+  val = person;
+
+  // Specifiek value ophalen
+  val = person.firstName;
+  val = person["lastName"];
+  val = person.age;
+  val = person.hobbies;
+  val = person.hobbies[1];
+  val = person.adress.land;
+  val = person.adress["city"];
+  val = person["adress"]["land"];
+  val = person.getBirthYear();
+
+  // Een array van objecten maken
+  const people = [{ name: "Jan", age: 30 }, { name: "jaap", age: 25 }];
+
+  for (let i = 0; i < people.length; i++) {
+    console.log(people[i].name);
+  }
+
+  console.log(val);
+}
+
+// ConsoleLogFunctions();
+// Vars()
+// Lets()
+// Constants()
+// PrimitiveDataTypes()
+// referenceDataTypes()
+// TypeConversion()
+// typeCohersion()
+// quickMath()
+// stringingStringsTogether()
+// TemplateLiterals()
+// ArrayMethods();
+// ObjectLiterals();
