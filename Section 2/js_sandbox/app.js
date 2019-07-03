@@ -573,8 +573,109 @@ function DatesTimes() {
 
 // If Statements & Comparison operators
 
-function IfthisComparison(){
+function IfthisComparison() {
+  const id = "100";
 
+  // equal to
+  if (id == 100) {
+    console.log("id is 100");
+  } else {
+    console.log("id is geen 100");
+  }
+
+  // not equal to
+  if (id != 100) {
+    console.log("id is niet gelijk aan 100");
+  } else {
+    console.log("id is gelijk aan 100");
+  }
+
+  // Er word alleen getest op value... we gaan nu testen op type door gebruik te maken van === ipv ==
+  // Equal to value & type
+  if (id === 100) {
+    console.log("id is 100");
+  } else {
+    console.log("id is geen 100 of niet van het type number");
+  }
+  // Not equal to value and type
+  if (id !== 100) {
+    console.log("correct");
+  } else {
+    console.log("incorrect");
+  }
+
+  // Kijk of id is gedefinieerd
+  if (typeof id != "undefined") {
+    console.log(`the id is ${id}`);
+  } else {
+    console.log("id is undefined yo");
+  }
+
+  // greater then
+  if (id > 200) {
+    console.log("correct");
+  } else {
+    console.log("incorrect");
+  }
+
+  // greater then or equal to
+  if (id >= 100) {
+    console.log("correct");
+  } else {
+    console.log("incorrect");
+  }
+
+  // less then
+  if (id < 200) {
+    console.log("correct");
+  } else {
+    console.log("incorrect");
+  }
+
+  // less then or equal to
+  if (id <= 110) {
+    console.log("correct");
+  } else {
+    console.log("incorrect");
+  }
+
+  // If Else
+  const colour = "yellow";
+
+  if (colour === "red") {
+    console.log("color is red");
+  } else if (colour === "blue") {
+    console.log("color is blue");
+  } else {
+    console.log("its not red or blue");
+  }
+
+  // Logical operators: AND &&
+  const name = "bart";
+  const age = 24;
+
+  if (age > 0 && age < 12) {
+    console.log(`${name} is a child`);
+  } else if (age >= 13 && age <= 19) {
+    console.log(`${name} is a teenager`);
+  } else {
+    console.log(`${name} is an adult`);
+  }
+
+  // Logical operators: OR ||
+  if (age < 16 || age > 65) {
+    console.log("niet in de gewenste leeftijdscategorie");
+  } else {
+    console.log("hij mag meedoen");
+  }
+
+  // Ternary Operator  Shorthand conditionals
+  // console.log(id === 100 ? 'true' : 'false / else');
+  console.log(id === 100 ? "correct" : "incorrect");
+
+  // if statement without braces (geen aanrader)
+  if (id === 100) console.log("correct");
+  else console.log("incorrect");
 }
 
 // ConsoleLogFunctions();
