@@ -4,6 +4,8 @@
 Multi line comment
 */
 
+// Console les 5
+
 function ConsoleLogFunctions() {
   // In deze functie zitten verschillende console.log functies
 
@@ -42,7 +44,7 @@ function ConsoleLogFunctions() {
   console.timeEnd("hello");
 }
 
-// Variabelen
+// Variabelen les 6
 /* 
 Er zijn 3 soorten variabelen namelijk var, let en const
 de variabele let en const zijn eigenlijk de enige die je nog gebruikt ivm block level scope.
@@ -124,7 +126,7 @@ function Constants() {
   console.log(numbers);
 }
 
-// Data types
+// Data types les 7
 
 /* 
 Er zijn 2 soorten datatypes, primitieve datatypes en reference datatypes. 
@@ -195,7 +197,7 @@ function referenceDataTypes() {
   console.log(typeof today);
 }
 
-// Type conversion
+// Type conversion les 8
 function TypeConversion() {
   //Het veranderen van datatypes
 
@@ -253,4 +255,45 @@ function typeCohersion() {
   console.log(sum);
   console.log(typeof sum);
 }
-typeCohersion();
+
+// Numbers & Math Objects les 9
+// ProTip: gebruik geen functienaam die hetzelfde is als een object naam uit js
+
+function quickMath(){
+const num1 = 100;
+const num2 = 50
+let val;
+
+// Simple math
+val = num1 + num2;
+val = num1 * num2;
+val = num1 - num2;
+val = num1 / num2;
+val = num1 % num2;
+
+// Math Object
+val = Math.PI;
+val = Math.E;
+// afronden naar dichtsbijzijnde number
+val = Math.round(2.8);
+// afronden omhoog
+val = Math.ceil(2.6);
+// afronden omlaag
+val = Math.floor(2.8);
+// Wortel
+val = Math.sqrt(64);
+// Laagste getal
+val = Math.min(2,33,52,12,5);
+// Hoogste getal
+val = Math.max(22,12,2,4,222);
+// Random getal
+val = Math.random() * 20 + 1;
+// Random getal afgerond
+val = Math.floor(Math.random() * 20 + 1);
+
+
+//Output
+console.log(val)
+console.log(typeof val);
+}
+quickMath()
