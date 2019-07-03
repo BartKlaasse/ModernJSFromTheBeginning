@@ -571,7 +571,7 @@ function DatesTimes() {
   console.log(birthday);
 }
 
-// If Statements & Comparison operators
+// If Statements & Comparison operators les 15
 
 function IfthisComparison() {
   const id = "100";
@@ -678,7 +678,7 @@ function IfthisComparison() {
   else console.log("incorrect");
 }
 
-// Switches
+// Switches les 16
 
 function SwitchMethod() {
   const colour = "blue";
