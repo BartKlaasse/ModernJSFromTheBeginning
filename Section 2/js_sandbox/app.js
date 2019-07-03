@@ -401,16 +401,97 @@ function TemplateLiterals() {
     <li> City: ${city}</li>
     <li> ${2 + 2}</li>
     <li> ${hello()} </li>
-    <li> ${age > 30 ? 'Ouder dan 30' : 'Jonger dan 30'}</li>
+    <li> ${age > 30 ? "Ouder dan 30" : "Jonger dan 30"}</li>
     </ul>
     `;
 
-function hello(){
-  return 'hello';
-}
+  function hello() {
+    return "hello";
+  }
   document.body.innerHTML = html;
 
   console.log(html);
 }
 
+// Arays & Array Methods Les 12
 
+function ArrayMethods() {
+  // Create a array
+  const numbers = [23, 32, 330, 112, 33, 12, 150, 4];
+  const numbers2 = new Array(22, 12, 3, 222, 5);
+  const fruit = ["apple", "banana", "orange", "grapes"];
+  // Een array kan een mix van types bevatten
+  const mixed = [11, "haha", true, undefined, null, { a: 1, b: 2 }, new Date()];
+  console.log(mixed);
+
+  let val;
+
+  // get array length
+  val = numbers.length;
+
+  // Check if it is a array
+  val = Array.isArray(numbers);
+
+  // get a single value from array
+  val = numbers[2];
+
+  // insert into array
+  numbers[2] = 100;
+
+  // Find index of value
+  val = numbers.indexOf(32);
+
+  // Add to end of array
+  numbers.push(250);
+
+  // Add to front of array
+  numbers.unshift(124);
+
+  // Remove from end of array
+  numbers.pop();
+
+  // Remove from front of array
+  numbers.shift();
+
+  // Splice values
+  numbers.splice(2,1)
+
+  // Reverse array
+  numbers.reverse();
+
+  // Concatonate Arrays
+  val = numbers.concat(numbers2);
+
+  // Sort Array
+  val = fruit.sort();
+  // Sort array op numbers werkt alleen voor het eerste getal bijvoorbeeld 1,11,13,12,2,22,25,23
+  val = numbers.sort();
+  
+  // Numbered Array sorteren met compare functie
+  val = numbers.sort(function(x,y){
+    return x - y ;
+  });
+
+  // Reverse sort
+  val = numbers.sort(function(x,y){
+    return y - x ;
+  });
+
+  // Find first in array less then 50
+  function under50(num){
+    return num < 50;
+  }
+  val = numbers.find(under50);
+
+  // Find first in array greater then 50
+  function under50(num){
+    return num > 50;
+  }
+  val = numbers.find(under50);
+
+
+  console.log(numbers);
+  console.log(val);
+}
+
+ArrayMethods();
