@@ -259,118 +259,158 @@ function typeCohersion() {
 // Numbers & Math Objects les 9
 // ProTip: gebruik geen functienaam die hetzelfde is als een object naam uit js
 
-function quickMath(){
-const num1 = 100;
-const num2 = 50
-let val;
+function quickMath() {
+  const num1 = 100;
+  const num2 = 50;
+  let val;
 
-// Simple math
-val = num1 + num2;
-val = num1 * num2;
-val = num1 - num2;
-val = num1 / num2;
-val = num1 % num2;
+  // Simple math
+  val = num1 + num2;
+  val = num1 * num2;
+  val = num1 - num2;
+  val = num1 / num2;
+  val = num1 % num2;
 
-// Math Object
-val = Math.PI;
-val = Math.E;
-// afronden naar dichtsbijzijnde number
-val = Math.round(2.8);
-// afronden omhoog
-val = Math.ceil(2.6);
-// afronden omlaag
-val = Math.floor(2.8);
-// Wortel
-val = Math.sqrt(64);
-// Laagste getal
-val = Math.min(2,33,52,12,5);
-// Hoogste getal
-val = Math.max(22,12,2,4,222);
-// Random getal
-val = Math.random() * 20 + 1;
-// Random getal afgerond
-val = Math.floor(Math.random() * 20 + 1);
+  // Math Object
+  val = Math.PI;
+  val = Math.E;
+  // afronden naar dichtsbijzijnde number
+  val = Math.round(2.8);
+  // afronden omhoog
+  val = Math.ceil(2.6);
+  // afronden omlaag
+  val = Math.floor(2.8);
+  // Wortel
+  val = Math.sqrt(64);
+  // Laagste getal
+  val = Math.min(2, 33, 52, 12, 5);
+  // Hoogste getal
+  val = Math.max(22, 12, 2, 4, 222);
+  // Random getal
+  val = Math.random() * 20 + 1;
+  // Random getal afgerond
+  val = Math.floor(Math.random() * 20 + 1);
 
-
-//Output
-console.log(val)
-console.log(typeof val);
+  //Output
+  console.log(val);
+  console.log(typeof val);
 }
 
 // Les 10 String methods en Concatenation
 
-function stringingStringsTogether(){
+function stringingStringsTogether() {
+  const firstName = "Bart";
+  const lastName = "Klaasse";
+  const age = 24;
+  const str = "Hoi ik heet Bart Klaasse";
+  const tags = "Javascript,C#,Pannenkoekenbakker";
 
-const firstName = 'Bart';
-const lastName = 'Klaasse';
-const age = 24;
-const str = 'Hoi ik heet Bart Klaasse';
-const tags = 'Javascript,C#,Pannenkoekenbakker'
+  let val;
 
+  // Samenvoegen
+  val = firstName + lastName;
 
-let val;
+  // Concatenation voorbeeld
+  val = firstName + " " + lastName;
 
-// Samenvoegen
-val = firstName + lastName;
+  // Appending to string
+  val = "Brad ";
+  val += "Traversy";
 
-// Concatenation voorbeeld
-val = firstName + ' ' + lastName; 
+  val = "Hoi ik heet " + firstName + " en ik ben " + age;
 
-// Appending to string
-val = 'Brad '
-val += 'Traversy';
+  // Escaping van een special character zoals quote characters
+  val = "Wauw dat i's cool, ik kan niet wachten";
 
-val = 'Hoi ik heet ' + firstName + ' en ik ben ' + age;
+  // Length property/method
+  val = firstName.length;
 
-// Escaping van een special character zoals quote characters
-val = 'Wauw dat i\'s cool, ik kan niet wachten'
+  // Concat method
+  val = firstName.concat(" ", lastName);
 
-// Length property/method
-val = firstName.length;
+  // touppercase method
+  val = firstName.toUpperCase();
+  val = firstName.toLowerCase();
 
-// Concat method
-val = firstName.concat(' ',lastName);
+  // Strings benaderen als read only array
+  val = firstName[2];
 
-// touppercase method
-val = firstName.toUpperCase();
-val = firstName.toLowerCase();
+  // IndexOf method, eerste index van een karakter vinden
+  val = lastName.indexOf("a");
 
-// Strings benaderen als read only array
-val = firstName[2];
+  // LastIndexOf method, laatste index van een karakter vinden
+  val = lastName.lastIndexOf("a");
 
-// IndexOf method, eerste index van een karakter vinden
-val = lastName.indexOf('a');
+  // CharAt  het omgekeerde van index of
+  val = firstName.charAt("2");
 
-// LastIndexOf method, laatste index van een karakter vinden
-val = lastName.lastIndexOf('a');
+  // Laatste karakter van de string
+  val = firstName.charAt(firstName.length - 1);
 
-// CharAt  het omgekeerde van index of
-val = firstName.charAt('2');
+  // Substring ophalen
+  val = firstName.substring(0, 3);
 
-// Laatste karakter van de string
-val = firstName.charAt(firstName.length - 1);
+  // Slice het opdelen van een string
+  val = firstName.slice(0, 3);
 
-// Substring ophalen
-val = firstName.substring(0,3);
+  // Inverted slice
+  val = firstName.slice(-2);
 
-// Slice het opdelen van een string
-val = firstName.slice(0,3);
+  // Split , een string opsplitsen naar een array
+  val = str.split(" ");
+  val = tags.split(",");
 
-// Inverted slice
-val = firstName.slice(-2);
+  // Replace
+  val = str.replace("Bart", "SuperBart");
 
-// Split , een string opsplitsen naar een array
-val = str.split(' ');
-val = tags.split(',');
+  // Includes
+  val = str.includes("Hoi");
+  val = str.includes("Pannenkoek");
 
-// Replace
-val = str.replace('Bart', 'SuperBart')
-
-// Includes
-val = str.includes('Hoi');
-val = str.includes('Pannenkoek');
-
-console.log(val);
+  console.log(val);
 }
 
-stringingStringsTogether();
+// Template Literals Les 11
+
+function TemplateLiterals() {
+  const name = "bart";
+  age = 24;
+  job = "developer";
+  city = "den helder";
+  let html;
+
+  // Zonder template literals (es5)
+  html =
+    "<ul><li>Name: " +
+    name +
+    "</li><li>Age: " +
+    age +
+    "</li><li>Job: " +
+    job +
+    "</li><li>city: " +
+    city +
+    "</li></ul>";
+
+  // Met template literals
+  // backticks geven aan dat het een literal is
+  html = `
+    <ul>
+    <li> Name: ${name}</li>
+    <li> Age: ${age}</li>
+    <li> Job: ${job}</li>
+    <li> City: ${city}</li>
+    <li> ${2 + 2}</li>
+    <li> ${hello()} </li>
+    <li> ${age > 30 ? 'Ouder dan 30' : 'Jonger dan 30'}</li>
+    </ul>
+    `;
+
+function hello(){
+  return 'hello';
+}
+  document.body.innerHTML = html;
+
+  console.log(html);
+}
+
+
