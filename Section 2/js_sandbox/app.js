@@ -723,6 +723,60 @@ function SwitchMethod() {
   console.log(`today is ${day}`);
 }
 
+// FUnction Declarations & explressions les 17
+
+function FunctionLes() {
+  // // functie declareren en returnen
+  // function greet(firstName, lastName) {
+  //   // console.log('hallo')
+  //   //DEFAULTS TOEVOEGEN ES5 manier
+  //   if (typeof firstName === 'undefined') {
+  //     firstName = 'Bart';
+  //   }
+  //   if (typeof lastName === 'undefined') {
+  //     lastName = 'Klaasse';
+  //   }
+  //   return "hello " + firstName + " " + lastName;
+  // }
+  // function greet(firstName = "Bart", lastName = "Klaasse") {
+  //   //DEFAULTS TOEVOEGEN ES6 manier staat hierboven
+  //   return "hello " + firstName + " " + lastName;
+  // }
+  // console.log(greet('john','doe'));
+  // console.log(greet());
+  //// Function expressions
+  // const square = function(x) {
+  //   return x * x;
+  // };
+  // console.log(square(9));
+  //// immediatly invokable function expressions - IFFE's
+  //// Iffe's zijn handig als je gebruik maakt van het module pattern
+  // (function(){
+  //   console.log('iffe ran')
+  // })();
+  ////  iffe met parameters
+  // (function(name){
+  //   console.log('Hello ' + name)
+  // })('Bart');
+  //// Property Methods
+  //// je kan functies toevoegen aan een object.
+  // const todo = {
+  //   add: function(){
+  //     console.log('add todo')
+  //   },
+  //   remove: function(id){
+  //     console.log('remove from todo ' + id + '.')
+  //   }
+  // }
+  //// je  kan ook later los een functie toevoegen aan een object
+  // todo.detail = function(){
+  //   console.log('detail todo');
+  // }
+  // todo.add();
+  // todo.remove(2);
+  // todo.detail();
+}
+
 // ConsoleLogFunctions();
 // Vars()
 // Lets()
@@ -738,3 +792,4 @@ function SwitchMethod() {
 // ObjectLiterals();
 // IfthisComparison();
 // SwitchMethod();
+// FunctionLes();
