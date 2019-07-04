@@ -777,6 +777,78 @@ function FunctionLes() {
   // todo.detail();
 }
 
+//// Les 18 General Loops
+
+function GeneralLoops() {
+  //// for loop
+  //// iteration skippen of extra acties dmv if
+  // for (let i = 0; i < 10; i++) {
+  //   if (i === 2) {
+  //     console.log("Mijn favoriete nummmer is " + i);
+  //     // continue eindigt vroegtijdig de huidige iteratie
+  //     // nu zal er geen console.log(2) worden geprint
+  //     continue;
+  //   }
+  //   console.log(i);
+  //   if (i === 5){
+  //     // Break stopt de for loop compleet
+  //     console.log('stop')
+  //     break;
+  //   }
+  // }
+  //// while loop
+  // let i = 0;
+  // while (i < 6) {
+  //   console.log("while " + i);
+  //   i++;
+  // }
+  //// do while loop
+  //// anders dan een while loop. omdat het minimaal 1x draait
+  // let i = 0;
+  // do {
+  //   console.log("Number " + i);
+  //   i++;
+  // } while (i < 10);
+  // for loop door een array
+  // const cars = ["ford", "chevy", "honda"];
+  // for (let i = 0; i < cars.length; i++){
+  //   console.log('car ' + cars[i]);
+  // }
+  //// Foreach door array
+  //// functie heeft maximaal 3 inputs. 1 is nodig namelijk de huidige iterator genaamd car, 2 is de index van de array, 3de waarde is de complete array
+  // cars.forEach(function(car, index, array) {
+  //   console.log(`Car=${car} index=${index}`);
+  //   console.log(array);
+  // });
+  //// Map gebruiken op array.
+  //// We gaan met map de id waardes uit de objecten in de array halen en die gaan we in de const ids zetten
+  // const users = [
+  //   {id: 1, name:'bart'},
+  //   {id: 2, name:'jaap'},
+  //   {id: 3, name:'peter'},
+  //   {id: 4, name:'steve'}
+  // ];
+  // const ids = users.map(function(user){
+  //   return user.id;
+  // });
+  // console.log(ids);
+  //// For-in loop
+  //// Voor ieder key value pair in een object
+  //// x is de key en user[x] is de value
+  // const user = {
+  //   firstName: "Bart",
+  //   lastName: "Klaasse",
+  //   age: 5
+  // };
+  // for (let x in user) {
+  //   console.log(`${x} : ${user[x]}`);
+  // }
+}
+
+// A look at the window object les 19
+
+function raamObject() {}
+
 // ConsoleLogFunctions();
 // Vars()
 // Lets()
@@ -793,3 +865,5 @@ function FunctionLes() {
 // IfthisComparison();
 // SwitchMethod();
 // FunctionLes();
+// GeneralLoops();
+raamObject();
