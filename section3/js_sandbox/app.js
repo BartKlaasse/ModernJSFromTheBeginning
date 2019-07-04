@@ -143,78 +143,92 @@ function multipleElementSelectors() {
 // Traversing the dom les 25
 
 function DomTraversing() {
-//   // Dom Traversing is het omhoog en naar beneden bewegen binnen de dom
-
-//   let val;
-
-//   const list = document.querySelector("ul");
-//   const listItem = document.querySelector("li.liclass:first-child");
-
-//   // Get all childNodes of ul - returns nodelist met voor Linebreaks een text node
-//   val = list.childNodes;
-//   // Get specific childNode.nodeName of ul
-//   val = list.childNodes[0].nodeName;
-//   // get specific childNode.nodeType of ul
-//   // Er zijn verschillende nodeTypes namelijk:
-//   // 1 - Element
-//   // 2 - Attribute (deprecated)
-//   // 3 - Text mode
-//   // 8 - Comment
-//   // 9 - Document itself
-//   // 10 - Doctype
-
-//   val = list.childNodes[1].nodeType;
-//   // Get all children of element nodes as HTMLcollection
-//   val = list.children;
-//   // Get specific child
-//   val = list.children[0];
-//   // modify specific node
-//   list.children[1].textContent = "Dit is een specifieke node";
-//   // Going down is getting a child
-//   // Get children of children
-//   val = list.children[0].children;
-//   val = list.children[0].children[0];
-
-//   // Get first child including text nodes
-//   val = list.firstChild;
-//   // Get first element child
-//   val = list.firstElementChild;
-
-//   // Get last child
-//   val = list.lastChild;
-//   // get last element child
-//   val = list.lastElementChild;
-//   // Get the count of all child elements in list
-//   val = list.childElementCount;
-
-//   // Going up is getting a parent
-//   // Get parent node
-//   val = listItem.parentNode;
-
-//   // Get parent element
-//   val = listItem.parentElement;
-
-//   // Get Parent of parent
-//   val = listItem.parentElement.parentNode;
-
-//   // Get next sibling
-// val = listItem.nextSibling;
-
-// // get next element sibling
-// val = listItem.nextElementSibling;
-// // get the one next to that
-// val = listItem.nextElementSibling.nextElementSibling;
-
-// // get previous sibling
-// val = listItem.previousSibling;
-// // get the previous sibling element - geeft null terug als er geen eerdere sibling is
-// val = listItem.previousElementSibling;
-
-//   console.log(val);
+  //   // Dom Traversing is het omhoog en naar beneden bewegen binnen de dom
+  //   let val;
+  //   const list = document.querySelector("ul");
+  //   const listItem = document.querySelector("li.liclass:first-child");
+  //   // Get all childNodes of ul - returns nodelist met voor Linebreaks een text node
+  //   val = list.childNodes;
+  //   // Get specific childNode.nodeName of ul
+  //   val = list.childNodes[0].nodeName;
+  //   // get specific childNode.nodeType of ul
+  //   // Er zijn verschillende nodeTypes namelijk:
+  //   // 1 - Element
+  //   // 2 - Attribute (deprecated)
+  //   // 3 - Text mode
+  //   // 8 - Comment
+  //   // 9 - Document itself
+  //   // 10 - Doctype
+  //   val = list.childNodes[1].nodeType;
+  //   // Get all children of element nodes as HTMLcollection
+  //   val = list.children;
+  //   // Get specific child
+  //   val = list.children[0];
+  //   // modify specific node
+  //   list.children[1].textContent = "Dit is een specifieke node";
+  //   // Going down is getting a child
+  //   // Get children of children
+  //   val = list.children[0].children;
+  //   val = list.children[0].children[0];
+  //   // Get first child including text nodes
+  //   val = list.firstChild;
+  //   // Get first element child
+  //   val = list.firstElementChild;
+  //   // Get last child
+  //   val = list.lastChild;
+  //   // get last element child
+  //   val = list.lastElementChild;
+  //   // Get the count of all child elements in list
+  //   val = list.childElementCount;
+  //   // Going up is getting a parent
+  //   // Get parent node
+  //   val = listItem.parentNode;
+  //   // Get parent element
+  //   val = listItem.parentElement;
+  //   // Get Parent of parent
+  //   val = listItem.parentElement.parentNode;
+  //   // Get next sibling
+  // val = listItem.nextSibling;
+  // // get next element sibling
+  // val = listItem.nextElementSibling;
+  // // get the one next to that
+  // val = listItem.nextElementSibling.nextElementSibling;
+  // // get previous sibling
+  // val = listItem.previousSibling;
+  // // get the previous sibling element - geeft null terug als er geen eerdere sibling is
+  // val = listItem.previousElementSibling;
+  //   console.log(val);
 }
 
 // Creating Elements les 26
-function creatingTheElements(){
+
+// function creatingTheElements() {
+//   // We gaan extra element aanmaken
+//   const li = document.createElement("li");
+//   // add a class
+//   li.className = "liclass";
+//   // add a id
+//   li.id = "liclassid1";
+//   // add a attribute
+//   li.setAttribute("title", "new item");
+//   // create a textnode and append it to the li.
+//   li.appendChild(document.createTextNode("Pre text link"));
+//   // create new a href for li
+//   const link = document.createElement("a");
+//   // add classes to link
+//   link.className = "classlink";
+//   link.innerText = "Klik hier ";
+//   link.href = "#";
+//   // append link into li
+//   li.appendChild(link);
+//   // append li as child of ul
+//   document.querySelector("ul.navlist").appendChild(li);
+//   console.log(li);
+// }
+
+// Removing and replacing Elements les 27
+
+function removeReplaceElements(){
 
 }
 
@@ -222,4 +236,5 @@ function creatingTheElements(){
 // singleElementSelectors();
 // multipleElementSelectors();
 // DomTraversing();
-creatingTheElements();
+// creatingTheElements();
+removeReplaceElements();
