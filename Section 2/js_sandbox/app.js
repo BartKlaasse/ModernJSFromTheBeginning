@@ -928,8 +928,40 @@ function raamObject() {
 
 // Block Scope les 20
 
-function BlockScope(){
+function BlockScope() {
+// // Global Scope = als het niet in een functie staat
 
+//   var a = 1;
+//   let b = 2;
+//   const c = 3;
+
+// // Function scope is alles blijft binnen de function
+//   function test() {
+//     var a = 4;
+//     let b = 5;
+//     const c = 6;
+//     console.log("function scope", a, b, c);
+//   }
+//   test();
+
+//   //Block scope
+//   if (true) {
+//     var a = 4;
+//     let b = 5;
+//     const c = 6;
+//     console.log("if scope", a, b, c);
+//   }
+//   // Let en const worden niet overschreven buiten de function scope. een var kan wel permanent worden overschreven in de block/if scope
+//   for (let a = 0;a < 10;a++){
+//     console.log(`loop: ${a}`);
+//   }
+
+//   for (var a = 0;a < 10;a++){
+//     console.log(`loop: ${a}`);
+//   }
+// // kijk naar het verschil van de console.log global scope en loop scopes
+
+//   console.log("global scope", a, b, c);
 }
 
 // ConsoleLogFunctions();
@@ -950,4 +982,4 @@ function BlockScope(){
 // FunctionLes();
 // GeneralLoops();
 // raamObject();
-BlockScope();
+// BlockScope();
