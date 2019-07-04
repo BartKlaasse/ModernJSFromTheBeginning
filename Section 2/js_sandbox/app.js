@@ -847,7 +847,90 @@ function GeneralLoops() {
 
 // A look at the window object les 19
 
-function raamObject() {}
+function raamObject() {
+  /*
+  het window object is het globale object aan de client side.
+  alle onderstaande methods zijn uit te voeren door er window. voor te zetten
+  De dom is een onderdeel van het window object.
+  */
+
+  // Windows methods/objects/properties
+
+  //console.log
+  // console.log(123);
+
+  // alert
+  // alert('hoi');
+
+  // prompt
+  // neemt een input vanuit alert box
+  // const input = prompt();
+  // alert(input);
+
+  //confirm
+  // if (confirm("weet je het zeker?")) {
+  //   console.log("yes");
+  // } else {
+  //   console.log("no");
+  // }
+
+  // verschillende properties van het window object
+  let val;
+
+  // outer height and width
+  val = window.outerHeight;
+  val = window.outerWidth;
+
+  // inner height and width
+  val = window.innerHeight;
+  val = window.innerWidth;
+
+  // Scroll points
+  // waar je bent met scrollen
+  val = window.scrollY;
+  val = window.scrollX;
+
+  // Location object
+  val = window.location;
+  // inhoud van location object benaderen
+  val = window.location.hostname;
+  val = window.location.port;
+  val = window.location.href;
+  // alles achter de ampersande& in de url
+  val = window.location.search;
+
+  // Location object redirect
+  // window.location.href = 'https://google.com';
+
+  // Reload blijft pagina infinite reloaden
+  // window.location.reload();
+
+  // History Object, gaat terug naar de vorige pagina. parameter toevoegen zoals -1 gaan we 1 site terug
+  // val = window.history.go();
+
+  // De lengte van de history
+  val = window.history.length;
+
+  // Navigator object
+  // dit heeft te maken met de browser zelf niet met de paginas
+  // Haalt verschillende browser informatie op
+
+  val = window.navigator;
+  val = window.navigator.appName;
+  val = window.navigator.appVersion;
+  val = window.navigator.userAgent;
+  val = window.navigator.platform;
+  val = window.navigator.vendor;
+  val = window.navigator.language;
+
+  console.log(val);
+}
+
+// Block Scope les 20
+
+function BlockScope(){
+
+}
 
 // ConsoleLogFunctions();
 // Vars()
@@ -866,4 +949,5 @@ function raamObject() {}
 // SwitchMethod();
 // FunctionLes();
 // GeneralLoops();
-raamObject();
+// raamObject();
+BlockScope();
