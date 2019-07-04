@@ -88,15 +88,65 @@ function singleElementSelectors() {
   // eerste even of oneven element selecteren
   document.querySelector("li:nth-child(odd)").style.background = "#ccc";
   document.querySelector("li:nth-child(even)").style.background = "#bbb";
-
 }
 
 // Les 24 multiple element selectors
 
-function multipleElementSelectors(){
+function multipleElementSelectors() {
+  //   // meerdere elementen ophalen met classname getElementsByClassName
+  //   const items = document.getElementsByClassName("classlink");
+  //   console.log(items);
+  //   // specifiek item ophalen
+  //   console.log(items[0]);
+  //   //specifiek item bewerken
+  //   items[0].style.color = "red";
+  //   items[1].textContent = "Hoi";
+  //   // alle "sub"elementen ophalen uit specifiek element
+  //   const listItems = document
+  //     .querySelector("ul")
+  //     .getElementsByClassName("classlink");
+  //   console.log(listItems);
+  //   // meerdere elementen ophalen op basis van tagname getElementsByTagName
+  //   let ahref = document.getElementsByTagName("a");
+  //   console.log(ahref);
+  //   // specifiek item ophalen
+  //   console.log(ahref[0]);
+  //   //specifiek item bewerken
+  //   ahref[0].style.color = "yellow";
+  //   ahref[1].textContent = "Hoi";
+  //   //convert html collection into array
+  //   ahref = Array.from(ahref);
+  //   ahref.reverse()
+  //   console.log(ahref);
+  //   ahref.forEach(function(ahref){
+  //       console.log(ahref.className);
+  //       ahref.textContent = 'Link';
+  //   })
+  // //Query alle a selectors met classname classlink die zich bevinden binnen de LI elementen - document.querySelectorAll
+  // // Returned informatie automatisch als array
+  // const items = document.querySelectorAll('li a.classlink');
+  // console.log(items);
+  // items.forEach(function(item,index){
+  //   console.log(item.className + ' Index:' + index);
+  // });
+  // // Even en Oneven selectors ophalen
+  // const itemsOdd = document.querySelectorAll('li:nth-child(odd)');
+  // const itemsEven = document.querySelectorAll('li:nth-child(even)');
+  // itemsOdd.forEach(function(item,index){
+  //   item.style.background = '#ccc';
+  // });
+  // itemsEven.forEach(function(item,index){
+  //   item.style.background = '#bbb';
+  // });
+}
+
+// Traversing the dom les 25
+
+function DomTraversing(){
 
 }
 
 // ExaminingDom();
 // singleElementSelectors();
-multipleElementSelectors();
+// multipleElementSelectors();
+DomTraversing();
