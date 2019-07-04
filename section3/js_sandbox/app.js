@@ -91,5 +91,12 @@ function singleElementSelectors() {
 
 }
 
+// Les 24 multiple element selectors
+
+function multipleElementSelectors(){
+
+}
+
 // ExaminingDom();
-singleElementSelectors();
+// singleElementSelectors();
+multipleElementSelectors();
