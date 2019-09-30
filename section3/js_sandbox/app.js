@@ -418,6 +418,10 @@ function inputEvents() {
   }
 }
 
+function eventBubblingAndDelegation(){
+  
+}
+
 // ExaminingDom();
 // singleElementSelectors();
 // multipleElementSelectors();
@@ -426,4 +430,4 @@ function inputEvents() {
 // removeReplaceElements();
 // ElementListener();
 // mouseEvents();
-inputEvents();
+// inputEvents();
