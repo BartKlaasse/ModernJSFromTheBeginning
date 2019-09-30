@@ -228,60 +228,93 @@ function DomTraversing() {
 
 // Removing and replacing Elements les 27
 
-function removeReplaceElements(){
-// // replace an element
+function removeReplaceElements() {
+  // // replace an element
+  // // create a new element
+  // const newHeading = document.createElement('h3');
+  // // add an id
+  // newHeading.id = 'MainTitle'
+  // // add a new textnode
+  // newHeading.appendChild(document.createTextNode('Dit is sectie 3'));
+  // // get the old heading
+  // const oldHeading = document.getElementById('MainTitle');
+  // // Get the parent so we can use replaceChild
+  // const parentMain = document.querySelector('.MainSection');
+  // // replace
+  // parentMain.replaceChild(newHeading,oldHeading);
+  // // Get all Li elements we might want to remove
+  // const lis = document.querySelectorAll('li');
+  // // get the parent of the li's we want to remove
+  // const list = document.querySelector('ul');
+  // // remove list item
+  // lis[2].remove();
+  // // Removing specific Child element
+  // list.removeChild(lis[0])
+  // // Adding and removing Classes
+  // const firstLi = document.querySelector('li:first-child');
+  // const link = firstLi.children[0];
+  // let val;
+  // // laat de classnames zien als string
+  // val = link.className;
+  // // laat de classnames zien als lijst
+  // val = link.classList;
+  // // Laat een specifieke className zien uit de list
+  // val = link.classList[0];
+  // link.classList.add('test');
+  // link.classList.remove('test');
+  // // Adding, Removing and Removing Attributes
+  // // haalt de waarde van het attribute op
+  // val = link.getAttribute('href');
+  // // wijzigd de waarde van het attribute
+  // val = link.setAttribute('href', 'http://google.com');
+  // // kijkt of link een attribute heeft en geeft een boolean terug
+  // val = link.hasAttribute('href');
+  // // verwijder een attribute
+  // link.removeAttribute('href');
+  // console.log(val)
+}
 
-// // create a new element
-// const newHeading = document.createElement('h3');
-// // add an id
-// newHeading.id = 'MainTitle'
-// // add a new textnode
-// newHeading.appendChild(document.createTextNode('Dit is sectie 3'));
+function ElementListener() {
+  // we gaan een functie maken die luistert naar events op een bepaalde class
+  // De addeventlistener maakt gebruikt van een lege functie
+  // document.querySelector('.btn-primary').addEventListener('click',function(e){
+  //   console.log('Test');
+  //   // Prevent default zorgt ervoor dat de default actie na de click niet word uitgevoerd
+  //   // e.preventDefault();
+  // });
 
-// // get the old heading
-// const oldHeading = document.getElementById('MainTitle');
-// // Get the parent so we can use replaceChild
-// const parentMain = document.querySelector('.MainSection');
-// // replace
-// parentMain.replaceChild(newHeading,oldHeading);
+  // in plaats van een lege functie kan je ook een eigen functie gebruiken
+  // het gebruik van een named functie is netter
+  document.querySelector(".btn-primary").addEventListener("click", onClick);
 
-// // Get all Li elements we might want to remove
-// const lis = document.querySelectorAll('li');
-// // get the parent of the li's we want to remove
-// const list = document.querySelector('ul');
-// // remove list item
-// lis[2].remove();
+  function onClick(e) {
+    // console.log('test')
+    // val krijgt de waarde van het event object
+    let val;
+    val = e;
 
-// // Removing specific Child element
-// list.removeChild(lis[0])
+    // Speciefiek element opvragen van het event
+    val = e.target;
+    val = e.target.id;
+    val = e.target.className;
 
-// // Adding and removing Classes 
-// const firstLi = document.querySelector('li:first-child');
-// const link = firstLi.children[0];
+    val = e.target.classList;
 
-// let val;
-// // laat de classnames zien als string
-// val = link.className;
-// // laat de classnames zien als lijst
-// val = link.classList;
-// // Laat een specifieke className zien uit de list
-// val = link.classList[0];
-// link.classList.add('test');
-// link.classList.remove('test');
+    // Elementen van het event aanpassen
+    e.target.innerText = "Hoi";
 
-// // Adding, Removing and Removing Attributes
-// // haalt de waarde van het attribute op
-// val = link.getAttribute('href');
-// // wijzigd de waarde van het attribute
-// val = link.setAttribute('href', 'http://google.com');
-// // kijkt of link een attribute heeft en geeft een boolean terug
-// val = link.hasAttribute('href');
-// // verwijder een attribute
-// link.removeAttribute('href');
+    // Event type
+    val = e.type;
 
-// console.log(val)
+    // Coordinaten relatief van scherm
+    // clientY aantal pixels vanaf Y axis vanwaar de muis exact heeft geklikt
+    val = e.clientY;
 
+    // de offset vanaf center knop
+    val = e.offsetY;
 
+    console.log(val);
+  }
 }
 
 // ExaminingDom();
@@ -290,3 +323,4 @@ function removeReplaceElements(){
 // DomTraversing();
 // creatingTheElements();
 // removeReplaceElements();
+// ElementListener();
