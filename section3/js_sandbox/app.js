@@ -317,6 +317,49 @@ function ElementListener() {
   }
 }
 
+function mouseEvents(){
+  const clearBtn = document.querySelector('.clear-tasks');
+  const card = document.querySelector('.card');
+  const heading = document.querySelector('h5');
+
+  // Click a element
+  // clearBtn.addEventListener('click', runEvent);
+
+  // Double Click a element
+  // clearBtn.addEventListener('dblclick', runEvent);
+
+  // Mousedown on a element
+  // clearBtn.addEventListener('mousedown', runEvent);
+
+  // Mouse up on element
+  // clearBtn.addEventListener('mouseup', runEvent);
+
+  // Mouse enters a element
+  // card.addEventListener('mouseenter',runEvent);
+
+  // Mouse leaves a element
+  // card.addEventListener('mouseleave', runEvent);
+
+  // Mouse over element
+  // card.addEventListener('mouseover', runEvent);
+
+  // Mouse out of element
+  // card.addEventListener('mouseout', runEvent);
+  
+  // Mouse moves in element
+  card.addEventListener('mousemove', runEvent);
+
+
+  // Event handler
+  function runEvent(e){
+    console.log(`EVENT TYPE: ${e.type}`);    
+
+    heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+  }
+}
+
 // ExaminingDom();
 // singleElementSelectors();
 // multipleElementSelectors();
@@ -324,3 +367,4 @@ function ElementListener() {
 // creatingTheElements();
 // removeReplaceElements();
 // ElementListener();
+mouseEvents();
