@@ -317,10 +317,10 @@ function ElementListener() {
   }
 }
 
-function mouseEvents(){
-  const clearBtn = document.querySelector('.clear-tasks');
-  const card = document.querySelector('.card');
-  const heading = document.querySelector('h5');
+function mouseEvents() {
+  const clearBtn = document.querySelector(".clear-tasks");
+  const card = document.querySelector(".card");
+  const heading = document.querySelector("h5");
 
   // Click a element
   // clearBtn.addEventListener('click', runEvent);
@@ -345,18 +345,76 @@ function mouseEvents(){
 
   // Mouse out of element
   // card.addEventListener('mouseout', runEvent);
-  
-  // Mouse moves in element
-  card.addEventListener('mousemove', runEvent);
 
+  // Mouse moves in element
+  card.addEventListener("mousemove", runEvent);
 
   // Event handler
-  function runEvent(e){
-    console.log(`EVENT TYPE: ${e.type}`);    
+  function runEvent(e) {
+    console.log(`EVENT TYPE: ${e.type}`);
 
     heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
 
     document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+  }
+}
+
+function inputEvents() {
+  // we gaan keyboard en inputevents afhandelen
+
+  const form = document.querySelector("form");
+  const taskInput = document.getElementById("task");
+  const heading = document.querySelector("h5");
+  const select = document.querySelector("select");
+
+  // Eventlistener op de submit knop
+  // form.addEventListener('submit', runEvent);
+
+  // Keydown event
+  // taskInput.addEventListener('keydown', runEvent);
+
+  // Key up event
+  // taskInput.addEventListener('keyup', runEvent);
+
+  // Key press event
+  // taskInput.addEventListener('keypress', runEvent);
+
+  // Focus event
+  // taskInput.addEventListener('focus', runEvent);
+
+  // Blur event
+  // taskInput.addEventListener('blur', runEvent);
+
+  // Cut event
+  // taskInput.addEventListener('cut', runEvent);
+
+  // Paste event
+  // taskInput.addEventListener('paste', runEvent);
+
+  // General Input event
+  // taskInput.addEventListener('input', runEvent);
+
+  // Voor de select opties moet materialize ui even worden uitgecomment in index.html
+  // Change event
+  select.addEventListener("change", runEvent);
+
+  function runEvent(e) {
+    // Logt het event type
+    console.log(`EVENT TYPE: ${e.type}`);
+
+    // logt het value van het target van het event
+    console.log(e.target.value);
+
+    // heading.innerText = e.target.value;
+
+    // // Haalt de waarde op die in de inputbox staat
+    // console.log(taskInput.value);
+
+    // // voorkomt redirects naar andere pagina's
+    // e.preventDefault();
+
+    // // clears input value
+    // taskInput.value = "";
   }
 }
 
@@ -367,4 +425,5 @@ function mouseEvents(){
 // creatingTheElements();
 // removeReplaceElements();
 // ElementListener();
-mouseEvents();
+// mouseEvents();
+inputEvents();
