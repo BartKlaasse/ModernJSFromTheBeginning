@@ -418,8 +418,56 @@ function inputEvents() {
   }
 }
 
-function eventBubblingAndDelegation(){
+function eventBubblingAndDelegation() {
+  // Bij event bubbling begint het event bij het gekozen element, vervolgens "bubbelt" het event naar alle parents van het element.
+  // Bij event delegation geef je de parent aan als beginplaats en ga je daarna logica gebruiken om naar het benodigde element te navigeren?
+
+  // Voorbeeld event bubbling. klik op task list en zie dat de card content en card ook het event regristreren
+  // document.querySelector(".card-title").addEventListener("click", function() {
+  //   console.log("card title");
+  // });
+  // document.querySelector(".card-content").addEventListener("click", function() {
+  //   console.log("card content");
+  // });
+  // document.querySelector(".card").addEventListener("click", function() {
+  //   console.log("card");
+  // });
+
+  // Event delegation voorbeeld
+  // in bovenstaande code zie je dat alleen het eerste element met de class .delete-item een event listener heeft gekregen.
+
+  // const delItem = document.querySelector('.delete-item');
+
+  // delItem.addEventListener('click', deleteItem);
+
+  // function deleteItem(){
+  //   console.log('delete item');
+  // }
+
+  // Nu gaan we de eventlistener koppelen aan een parent en vervolgens een conditional statement gebruiken om het juiste element op te halen.
+
+  document.body.addEventListener('click', deleteItem);
+
+  function deleteItem(e){
+    // pakt de parent van het event met de exacte classname, als het niet exact matcht gebruik dan 2de voorbeeld
+    // if(e.target.parentElement.className === 'delete-item secondary-content'){
+    //   console.log('delete item');
+    // }
+
+    // if(e.target.parentElement.classList.contains('delete-item')){
+    //   console.log('delete item');
+    // }
+
+    if(e.target.parentElement.classList.contains('delete-item')){
+      console.log('delete item');
+      // onderstaande verwijderd het element.
+      e.target.parentElement.parentElement.remove();
+    }
+  }
+
   
+
+
 }
 
 // ExaminingDom();
@@ -431,3 +479,4 @@ function eventBubblingAndDelegation(){
 // ElementListener();
 // mouseEvents();
 // inputEvents();
+eventBubblingAndDelegation();
