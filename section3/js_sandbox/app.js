@@ -446,9 +446,9 @@ function eventBubblingAndDelegation() {
 
   // Nu gaan we de eventlistener koppelen aan een parent en vervolgens een conditional statement gebruiken om het juiste element op te halen.
 
-  document.body.addEventListener('click', deleteItem);
+  document.body.addEventListener("click", deleteItem);
 
-  function deleteItem(e){
+  function deleteItem(e) {
     // pakt de parent van het event met de exacte classname, als het niet exact matcht gebruik dan 2de voorbeeld
     // if(e.target.parentElement.className === 'delete-item secondary-content'){
     //   console.log('delete item');
@@ -458,16 +458,62 @@ function eventBubblingAndDelegation() {
     //   console.log('delete item');
     // }
 
-    if(e.target.parentElement.classList.contains('delete-item')){
-      console.log('delete item');
+    if (e.target.parentElement.classList.contains("delete-item")) {
+      console.log("delete item");
       // onderstaande verwijderd het element.
       e.target.parentElement.parentElement.remove();
     }
   }
+}
 
-  
+function localSessionStorage() {
+  // Je kan alleen strings opslaan in localstorage, arrays etc moet je eerst parsen naar een string
 
+  // // Set localstorage
+  // localStorage.setItem('name', 'John');
+  // localStorage.setItem('age', '30');
 
+  // // Set session storage
+  // sessionStorage.setItem('name', 'Beth');
+
+  // // Remove Key from storage
+  // sessionStorage.removeItem('name');
+
+  // // Get from storage
+  // const name = localStorage.getItem('name');
+  // const age = localStorage.getItem('age');
+
+  // console.log(name, age);
+
+  // // Clear all from storage
+  // localStorage.clear();
+
+  // Iedere key is uniek, als je een key hergebruikt voor meerdere values dan word het vorige value overscreven
+  // Je kan wel een een array omzetten naar een string, en dan vervolgens deze string opslaan in localstorage
+  document.querySelector("form").addEventListener("submit", function(e) {
+    const task = document.getElementById('task').value;
+
+    let tasks;
+
+    if (localStorage.getItem('tasks') === null) {
+      tasks = [];
+    } else {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    tasks.push(task);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    alert('task saved');
+
+    e.preventDefault();
+  });
+
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+  tasks.forEach(function(task){
+    console.log(task);
+  })
 }
 
 // ExaminingDom();
@@ -479,4 +525,5 @@ function eventBubblingAndDelegation() {
 // ElementListener();
 // mouseEvents();
 // inputEvents();
-eventBubblingAndDelegation();
+// eventBubblingAndDelegation();
+localSessionStorage();
