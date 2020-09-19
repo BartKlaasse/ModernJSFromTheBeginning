@@ -17,6 +17,7 @@ function Person(name, dob) {
 // //This refers to the current window object as it is in the global scope
 // this.alert(1);
 
+
 // //instantiate an object
 // const brad = new Person('brad', 30);
 // const john = new Person('john', 40);
