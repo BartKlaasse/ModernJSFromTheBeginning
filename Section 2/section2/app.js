@@ -15,18 +15,18 @@ function ConsoleLogFunctions() {
   // Console clearen
   console.clear();
 
-  //Console log string
+  // Console log string
   console.log("test");
-  //Console log ints
+  // Console log ints
   console.log(123);
 
   // console log variabelen
-  var greeting = "hoi";
+  const greeting = "hoi";
   console.log(greeting);
-  //console log array
+  // console log array
   console.log([1, 2, 3]);
 
-  //console log object
+  // console log object
   console.log({ a: 1, b: 2 });
 
   // Console log object as table
@@ -52,7 +52,7 @@ de variabele let en const zijn eigenlijk de enige die je nog gebruikt ivm block 
 
 function Vars() {
   // Variabele declareren van type var
-  var name = "John doe";
+  let name = "John doe";
   console.log(name);
 
   // aan een var en een let variabele kan je later opnieuw een waarde aan toewijzen
@@ -61,7 +61,7 @@ function Vars() {
   console.log(name);
 
   // Variabele initialiseren
-  var greeting;
+  let greeting;
   // Console log geeft een undefined output
   console.log(greeting);
   // Nu een waarde geven aan de variabele greeting
@@ -85,7 +85,7 @@ var firstName <-- de N van Name is een hoofdletter
 function Lets() {
   // Let Variabelen:
 
-  //Variabele initialiseren van het type let:
+  // Variabele initialiseren van het type let:
   let name;
 
   // Variabele declareren van type let
@@ -109,7 +109,7 @@ function Constants() {
   // de inhoud van een const arrays of object kan wel veranderd worden.
   const person = {
     name: "john",
-    age: 30
+    age: 30,
   };
   console.log(person);
 
@@ -188,7 +188,7 @@ function referenceDataTypes() {
   // Object literal
   const adress = {
     city: "Amsterdam",
-    land: "Nederland"
+    land: "Nederland",
   };
   console.log(typeof adress);
   // Date
@@ -199,7 +199,7 @@ function referenceDataTypes() {
 
 // Type conversion les 8
 function TypeConversion() {
-  //Het veranderen van datatypes
+  // Het veranderen van datatypes
 
   let val;
 
@@ -219,7 +219,7 @@ function TypeConversion() {
   // number to string
   val = (5).toString();
 
-  //Boolean to string
+  // Boolean to string
   val = true.toString();
 
   // Strings to number
@@ -236,10 +236,10 @@ function TypeConversion() {
   val = parseInt("100");
   val = parseInt("100.30");
 
-  //ParseFloat maakt er een getal van met cijfers achter de komma
+  // ParseFloat maakt er een getal van met cijfers achter de komma
   val = parseFloat("11.2101");
 
-  //Output
+  // Output
   console.log(val);
   console.log(typeof val);
   console.log(val.length);
@@ -291,7 +291,7 @@ function quickMath() {
   // Random getal afgerond
   val = Math.floor(Math.random() * 20 + 1);
 
-  //Output
+  // Output
   console.log(val);
   console.log(typeof val);
 }
@@ -311,13 +311,13 @@ function stringingStringsTogether() {
   val = firstName + lastName;
 
   // Concatenation voorbeeld
-  val = firstName + " " + lastName;
+  val = `${firstName} ${lastName}`;
 
   // Appending to string
   val = "Brad ";
   val += "Traversy";
 
-  val = "Hoi ik heet " + firstName + " en ik ben " + age;
+  val = `Hoi ik heet ${firstName} en ik ben ${age}`;
 
   // Escaping van een special character zoals quote characters
   val = "Wauw dat i's cool, ik kan niet wachten";
@@ -380,16 +380,7 @@ function TemplateLiterals() {
   let html;
 
   // Zonder template literals (es5)
-  html =
-    "<ul><li>Name: " +
-    name +
-    "</li><li>Age: " +
-    age +
-    "</li><li>Job: " +
-    job +
-    "</li><li>city: " +
-    city +
-    "</li></ul>";
+  html = `<ul><li>Name: ${name}</li><li>Age: ${age}</li><li>Job: ${job}</li><li>city: ${city}</li></ul>`;
 
   // Met template literals
   // backticks geven aan dat het een literal is
@@ -468,12 +459,12 @@ function ArrayMethods() {
   val = numbers.sort();
 
   // Numbered Array sorteren met compare functie
-  val = numbers.sort(function(x, y) {
+  val = numbers.sort(function (x, y) {
     return x - y;
   });
 
   // Reverse sort
-  val = numbers.sort(function(x, y) {
+  val = numbers.sort(function (x, y) {
     return y - x;
   });
 
@@ -505,13 +496,13 @@ function ObjectLiterals() {
     hobbies: ["gaming", "sailing"],
     adress: {
       city: "den helder",
-      land: "nederland"
+      land: "nederland",
     },
-    getBirthYear: function() {
+    getBirthYear() {
       // om de huidige age van het object op te halen kan je niet gebruik maken van de age variabele
       // je moet gebruik maken van het this keyword om te referen naar dit object
       return 2019 - this.age;
-    }
+    },
   };
 
   let val;
@@ -519,17 +510,20 @@ function ObjectLiterals() {
 
   // Specifiek value ophalen
   val = person.firstName;
-  val = person["lastName"];
+  val = person.lastName;
   val = person.age;
   val = person.hobbies;
   val = person.hobbies[1];
   val = person.adress.land;
-  val = person.adress["city"];
-  val = person["adress"]["land"];
+  val = person.adress.city;
+  val = person.adress.land;
   val = person.getBirthYear();
 
   // Een array van objecten maken
-  const people = [{ name: "Jan", age: 30 }, { name: "jaap", age: 25 }];
+  const people = [
+    { name: "Jan", age: 30 },
+    { name: "jaap", age: 25 },
+  ];
 
   for (let i = 0; i < people.length; i++) {
     console.log(people[i].name);
@@ -605,7 +599,7 @@ function IfthisComparison() {
   }
 
   // Kijk of id is gedefinieerd
-  if (typeof id != "undefined") {
+  if (typeof id !== "undefined") {
     console.log(`the id is ${id}`);
   } else {
     console.log("id is undefined yo");
@@ -744,22 +738,22 @@ function FunctionLes() {
   // }
   // console.log(greet('john','doe'));
   // console.log(greet());
-  //// Function expressions
+  /// / Function expressions
   // const square = function(x) {
   //   return x * x;
   // };
   // console.log(square(9));
-  //// immediatly invokable function expressions - IFFE's
-  //// Iffe's zijn handig als je gebruik maakt van het module pattern
+  /// / immediatly invokable function expressions - IFFE's
+  /// / Iffe's zijn handig als je gebruik maakt van het module pattern
   // (function(){
   //   console.log('iffe ran')
   // })();
-  ////  iffe met parameters
+  /// /  iffe met parameters
   // (function(name){
   //   console.log('Hello ' + name)
   // })('Bart');
-  //// Property Methods
-  //// je kan functies toevoegen aan een object.
+  /// / Property Methods
+  /// / je kan functies toevoegen aan een object.
   // const todo = {
   //   add: function(){
   //     console.log('add todo')
@@ -768,7 +762,7 @@ function FunctionLes() {
   //     console.log('remove from todo ' + id + '.')
   //   }
   // }
-  //// je  kan ook later los een functie toevoegen aan een object
+  /// / je  kan ook later los een functie toevoegen aan een object
   // todo.detail = function(){
   //   console.log('detail todo');
   // }
@@ -777,11 +771,11 @@ function FunctionLes() {
   // todo.detail();
 }
 
-//// Les 18 General Loops
+/// / Les 18 General Loops
 
 function GeneralLoops() {
-  //// for loop
-  //// iteration skippen of extra acties dmv if
+  /// / for loop
+  /// / iteration skippen of extra acties dmv if
   // for (let i = 0; i < 10; i++) {
   //   if (i === 2) {
   //     console.log("Mijn favoriete nummmer is " + i);
@@ -796,14 +790,14 @@ function GeneralLoops() {
   //     break;
   //   }
   // }
-  //// while loop
+  /// / while loop
   // let i = 0;
   // while (i < 6) {
   //   console.log("while " + i);
   //   i++;
   // }
-  //// do while loop
-  //// anders dan een while loop. omdat het minimaal 1x draait
+  /// / do while loop
+  /// / anders dan een while loop. omdat het minimaal 1x draait
   // let i = 0;
   // do {
   //   console.log("Number " + i);
@@ -814,14 +808,14 @@ function GeneralLoops() {
   // for (let i = 0; i < cars.length; i++){
   //   console.log('car ' + cars[i]);
   // }
-  //// Foreach door array
-  //// functie heeft maximaal 3 inputs. 1 is nodig namelijk de huidige iterator genaamd car, 2 is de index van de array, 3de waarde is de complete array
+  /// / Foreach door array
+  /// / functie heeft maximaal 3 inputs. 1 is nodig namelijk de huidige iterator genaamd car, 2 is de index van de array, 3de waarde is de complete array
   // cars.forEach(function(car, index, array) {
   //   console.log(`Car=${car} index=${index}`);
   //   console.log(array);
   // });
-  //// Map gebruiken op array.
-  //// We gaan met map de id waardes uit de objecten in de array halen en die gaan we in de const ids zetten
+  /// / Map gebruiken op array.
+  /// / We gaan met map de id waardes uit de objecten in de array halen en die gaan we in de const ids zetten
   // const users = [
   //   {id: 1, name:'bart'},
   //   {id: 2, name:'jaap'},
@@ -832,9 +826,9 @@ function GeneralLoops() {
   //   return user.id;
   // });
   // console.log(ids);
-  //// For-in loop
-  //// Voor ieder key value pair in een object
-  //// x is de key en user[x] is de value
+  /// / For-in loop
+  /// / Voor ieder key value pair in een object
+  /// / x is de key en user[x] is de value
   // const user = {
   //   firstName: "Bart",
   //   lastName: "Klaasse",
@@ -856,7 +850,7 @@ function raamObject() {
 
   // Windows methods/objects/properties
 
-  //console.log
+  // console.log
   // console.log(123);
 
   // alert
@@ -867,7 +861,7 @@ function raamObject() {
   // const input = prompt();
   // alert(input);
 
-  //confirm
+  // confirm
   // if (confirm("weet je het zeker?")) {
   //   console.log("yes");
   // } else {
@@ -929,39 +923,34 @@ function raamObject() {
 // Block Scope les 20
 
 function BlockScope() {
-// // Global Scope = als het niet in een functie staat
-
-//   var a = 1;
-//   let b = 2;
-//   const c = 3;
-
-// // Function scope is alles blijft binnen de function
-//   function test() {
-//     var a = 4;
-//     let b = 5;
-//     const c = 6;
-//     console.log("function scope", a, b, c);
-//   }
-//   test();
-
-//   //Block scope
-//   if (true) {
-//     var a = 4;
-//     let b = 5;
-//     const c = 6;
-//     console.log("if scope", a, b, c);
-//   }
-//   // Let en const worden niet overschreven buiten de function scope. een var kan wel permanent worden overschreven in de block/if scope
-//   for (let a = 0;a < 10;a++){
-//     console.log(`loop: ${a}`);
-//   }
-
-//   for (var a = 0;a < 10;a++){
-//     console.log(`loop: ${a}`);
-//   }
-// // kijk naar het verschil van de console.log global scope en loop scopes
-
-//   console.log("global scope", a, b, c);
+  // // Global Scope = als het niet in een functie staat
+  //   var a = 1;
+  //   let b = 2;
+  //   const c = 3;
+  // // Function scope is alles blijft binnen de function
+  //   function test() {
+  //     var a = 4;
+  //     let b = 5;
+  //     const c = 6;
+  //     console.log("function scope", a, b, c);
+  //   }
+  //   test();
+  //   //Block scope
+  //   if (true) {
+  //     var a = 4;
+  //     let b = 5;
+  //     const c = 6;
+  //     console.log("if scope", a, b, c);
+  //   }
+  //   // Let en const worden niet overschreven buiten de function scope. een var kan wel permanent worden overschreven in de block/if scope
+  //   for (let a = 0;a < 10;a++){
+  //     console.log(`loop: ${a}`);
+  //   }
+  //   for (var a = 0;a < 10;a++){
+  //     console.log(`loop: ${a}`);
+  //   }
+  // // kijk naar het verschil van de console.log global scope en loop scopes
+  //   console.log("global scope", a, b, c);
 }
 
 // ConsoleLogFunctions();

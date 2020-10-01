@@ -1,11 +1,11 @@
-//Add event listener for button1
-document.getElementById('button1').addEventListener('click', loadCustomer);
-//Add event listener for button2
-document.getElementById('button2').addEventListener('click', loadCustomers);
+// Add event listener for button1
+document.getElementById("button1").addEventListener("click", loadCustomer);
+// Add event listener for button2
+document.getElementById("button2").addEventListener("click", loadCustomers);
 
 function loadCustomer(e) {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'customer.json', true);
+  xhr.open("GET", "customer.json", true);
   xhr.onload = function () {
     if (this.status === 200) {
       const customer = JSON.parse(this.responseText);
@@ -17,7 +17,7 @@ function loadCustomer(e) {
       <li>Phone: ${customer.phone}</li>
       </ul>
         `;
-      document.getElementById('customer').innerHTML = output;
+      document.getElementById("customer").innerHTML = output;
     }
   };
   xhr.send();
@@ -25,11 +25,11 @@ function loadCustomer(e) {
 
 function loadCustomers(e) {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'customers.json', true);
+  xhr.open("GET", "customers.json", true);
   xhr.onload = function () {
     if (this.status === 200) {
       const customers = JSON.parse(this.responseText);
-      let output = '';
+      let output = "";
       customers.forEach(function (customer) {
         output += `
       <ul>
@@ -41,7 +41,7 @@ function loadCustomers(e) {
         `;
       });
 
-      document.getElementById('customers').innerHTML = output;
+      document.getElementById("customers").innerHTML = output;
     }
   };
   xhr.send();

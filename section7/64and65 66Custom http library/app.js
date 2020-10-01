@@ -18,10 +18,10 @@ const http = new easyHTTP();
 //   }
 // });
 
-//Create data to post
+// Create data to post
 const data = {
-  title: 'custom post',
-  body: 'this is a custom post blablabla',
+  title: "custom post",
+  body: "this is a custom post blablabla",
 };
 
 // // Post Data to api
@@ -42,8 +42,11 @@ const data = {
 //   }
 // });
 
-//delete single post
-http.delete('https://jsonplaceholder.typicode.com/posts/1', function (error, callbackresponse) {
+// delete single post
+http.delete("https://jsonplaceholder.typicode.com/posts/1", function (
+  error,
+  callbackresponse
+) {
   if (error) {
     console.log(error);
   } else {

@@ -1,6 +1,6 @@
 const posts = [
-  { title: 'post one', body: 'body 1' },
-  { title: 'post two', body: 'body 2' },
+  { title: "post one", body: "body 1" },
+  { title: "post two", body: "body 2" },
 ];
 
 // function createPost(post) {
@@ -29,7 +29,7 @@ function createPost(post, callback) {
 }
 function getPosts() {
   setTimeout(() => {
-    let output = '';
+    let output = "";
     posts.forEach(function (post) {
       output += `<li>${post.title}</li>`;
     });
@@ -37,4 +37,4 @@ function getPosts() {
   }, 1000);
 }
 
-createPost({ title: 'post 3', body: 'body3' }, getPosts);
+createPost({ title: "post 3", body: "body3" }, getPosts);

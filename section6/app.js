@@ -7,13 +7,13 @@ function Book(title, author, isbn) {
 // UI constructor
 
 function UI() {}
-//Add book to list
+// Add book to list
 UI.prototype.addBookToList = function (book) {
-  console.log('Added book to list', book);
-  const list = document.getElementById('book-list');
+  console.log("Added book to list", book);
+  const list = document.getElementById("book-list");
   // Create a TR element
-  const row = document.createElement('tr');
-  //Insert colums
+  const row = document.createElement("tr");
+  // Insert colums
   row.innerHTML = `
     <td>${book.title}</td>
     <td>${book.author}</td>
@@ -22,58 +22,58 @@ UI.prototype.addBookToList = function (book) {
     `;
   list.appendChild(row);
 };
-//Show alert
+// Show alert
 UI.prototype.showAlert = function (message, className) {
-  //Create a div
-  const div = document.createElement('div');
-  //Add classnames
+  // Create a div
+  const div = document.createElement("div");
+  // Add classnames
   div.className = `alert ${className}`;
-  //Add text
+  // Add text
   div.appendChild(document.createTextNode(message));
-  //Get parent element
-  const container = document.querySelector('.container');
-  const form = document.querySelector('#book-form');
-  //insert alert
+  // Get parent element
+  const container = document.querySelector(".container");
+  const form = document.querySelector("#book-form");
+  // insert alert
   container.insertBefore(div, form);
 
-  //set timeout to hide alert
+  // set timeout to hide alert
   setTimeout(function () {
-    document.querySelector('.alert').remove();
+    document.querySelector(".alert").remove();
   }, 3000);
 };
 
-//Delete book
+// Delete book
 UI.prototype.deleteBook = function (target) {
-  if (target.className === 'delete') {
+  if (target.className === "delete") {
     target.parentElement.parentElement.remove();
   }
 };
-//Clear fields
+// Clear fields
 UI.prototype.clearFields = function () {
-  document.getElementById('title').value = '';
-  document.getElementById('author').value = '';
-  document.getElementById('isbn').value = '';
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("isbn").value = "";
 };
-//Event listener for Add book
-document.getElementById('book-form').addEventListener('submit', function (e) {
-  //Get form values
-  const title = document.getElementById('title').value,
-    author = document.getElementById('author').value,
-    isbn = document.getElementById('isbn').value;
-  //instantiating a book
+// Event listener for Add book
+document.getElementById("book-form").addEventListener("submit", function (e) {
+  // Get form values
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const isbn = document.getElementById("isbn").value;
+  // instantiating a book
   const book = new Book(title, author, isbn);
-  //Instantiate ui
+  // Instantiate ui
   const ui = new UI();
-  //Validate
-  if (title === '' || author === '' || isbn === '') {
-    //Error alert
-    ui.showAlert('Please fill in all fields', 'error');
+  // Validate
+  if (title === "" || author === "" || isbn === "") {
+    // Error alert
+    ui.showAlert("Please fill in all fields", "error");
   } else {
-    //Add book to list
+    // Add book to list
     ui.addBookToList(book);
 
-    //show sucess alert
-    ui.showAlert('Book added', 'success');
+    // show sucess alert
+    ui.showAlert("Book added", "success");
 
     // Clear fields
     ui.clearFields();
@@ -81,11 +81,11 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
 
   e.preventDefault();
 });
-//Event listener for delete book
-document.getElementById('book-list').addEventListener('click', function (e) {
+// Event listener for delete book
+document.getElementById("book-list").addEventListener("click", function (e) {
   const ui = new UI();
   ui.deleteBook(e.target);
-  //show message
-  ui.showAlert('Book deleted', 'success');
+  // show message
+  ui.showAlert("Book deleted", "success");
   e.preventDefault();
 });

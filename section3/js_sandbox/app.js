@@ -30,9 +30,9 @@ function ExaminingDom() {
   val = document.scripts[0].getAttribute("src");
 
   // HTML collection omzetten naar een array om foreach te kunnen gebruiken
-  let scripts = document.scripts;
-  let scriptsArr = Array.from(scripts);
-  scriptsArr.forEach(function(script) {
+  const { scripts } = document;
+  const scriptsArr = Array.from(scripts);
+  scriptsArr.forEach(function (script) {
     console.log(script.getAttribute("src"));
   });
 
@@ -490,30 +490,30 @@ function localSessionStorage() {
 
   // Iedere key is uniek, als je een key hergebruikt voor meerdere values dan word het vorige value overscreven
   // Je kan wel een een array omzetten naar een string, en dan vervolgens deze string opslaan in localstorage
-  document.querySelector("form").addEventListener("submit", function(e) {
-    const task = document.getElementById('task').value;
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const task = document.getElementById("task").value;
 
     let tasks;
 
-    if (localStorage.getItem('tasks') === null) {
+    if (localStorage.getItem("tasks") === null) {
       tasks = [];
     } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
+      tasks = JSON.parse(localStorage.getItem("tasks"));
     }
 
     tasks.push(task);
 
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    alert('task saved');
+    alert("task saved");
 
     e.preventDefault();
   });
 
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const tasks = JSON.parse(localStorage.getItem("tasks"));
 
-  tasks.forEach(function(task){
+  tasks.forEach(function (task) {
     console.log(task);
-  })
+  });
 }
 
 // ExaminingDom();

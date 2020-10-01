@@ -24,15 +24,15 @@
 
 // sayHello('a', 'b');
 
-const users = ['Aaa', 'Bb', 'C'];
-//Full
+const users = ["Aaa", "Bb", "C"];
+// Full
 // const nameLengths = users.map(function (name) {
 //   return name.length;
 // });
-//Shorter
+// Shorter
 // const nameLengths = users.map((name) => {
 //   return name.length;
 // });
-//Shortest
+// Shortest
 const nameLengths = users.map((name) => name.length);
 console.log(nameLengths);
