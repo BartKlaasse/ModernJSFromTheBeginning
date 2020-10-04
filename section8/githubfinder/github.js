@@ -1,5 +1,6 @@
 class GitHub {
   constructor() {
+    //These keys have obviously been disabled by now.
     this.client_id = 'ddbd104309e67e614a02';
     this.client_secret = 'd47411c0e06542c8b5cef02368410392ffb631cf';
     this.repos_count = 5;
