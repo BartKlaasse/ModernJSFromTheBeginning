@@ -21,10 +21,17 @@ re = /[a-z]ray/; // Match any lowercase letter
 re = /[A-Za-z]ray/; // Match any  letter
 re = /[0-9]ray/; // Match any digit
 
-vid 85 gekeken tot 8:00 minuten
+// Braces {} - Quantifiers
+re = /Hel{2}o/i; // Matches to Hello - Must occurr exactly (thischaracter){m} ammount of times
+re = /Hel{2,4}o/i; // Matches to Hello - Must occurr exactly (thischaracter){between m and m} ammount of times
+re = /Hel{2,}o/i; // Matches to Hello - Must occurr exactly (thischaracter){atleast m} ammount of times
+
+// Parentheses () - Grouping
+re = /[0-9]x{3}/; // Match if number 0 to 9 and 3 times an x --- 4xxx
+re = /([0-9]x){3}/; // Match if number 0 to 9 and x is found 3 times -- 3x3x3xsdfsf
 
 // String to match
-const str = 'Gray?';
+const str = '3x3x3x';
 
 // log results
 const result = re.exec(str);
