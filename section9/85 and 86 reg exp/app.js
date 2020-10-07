@@ -30,8 +30,23 @@ re = /Hel{2,}o/i; // Matches to Hello - Must occurr exactly (thischaracter){atle
 re = /[0-9]x{3}/; // Match if number 0 to 9 and 3 times an x --- 4xxx
 re = /([0-9]x){3}/; // Match if number 0 to 9 and x is found 3 times -- 3x3x3xsdfsf
 
+// Shorthand character classes
+re = /\w/; // Word Character: Letters,Numbers,Underscores
+re = /\W/; // Non Word Character: anything but Letters,Numbers,Underscores
+re = /\w+/; // + is one or more
+re = /\d/; // Matches any digit
+re = /\d+/; // Matches all digits
+re = /\D/; // Match any non digit
+re = /\s/; // Match whitespace character
+re = /\S/; // Match Non whitespace character
+re = /Hell\b/i; // Word boundary
+
+// Assertions
+re = /x(?=y)/; // match x only if followed by y
+re = /x(?!y)/; // match x only if not followed by y
+
 // String to match
-const str = '3x3x3x';
+const str = 'xxsssxxsxy';
 
 // log results
 const result = re.exec(str);
