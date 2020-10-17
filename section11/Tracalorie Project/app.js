@@ -28,6 +28,32 @@ const StorageCtrl = (function () {
       }
       return items;
     },
+    updateItemStorage: function (updatedItem) {
+      let items = JSON.parse(localStorage.getItem('items'));
+      items.forEach(function (item, index) {
+        //
+        if (updatedItem.id === item.id) {
+          // Splice array at the 1 from the index (basicly deletes the old item)
+          // then insert the updateditem at that spot
+          items.splice(index, 1, updatedItem);
+        }
+      });
+      localStorage.setItem('items', JSON.stringify(items));
+    },
+    deleteItemFromStorage: function (id) {
+      let items = JSON.parse(localStorage.getItem('items'));
+      items.forEach(function (item, index) {
+        //
+        if (id === item.id) {
+          // Splice array at the 1 from the index (basicly deletes the old item)
+          items.splice(index, 1);
+        }
+      });
+      localStorage.setItem('items', JSON.stringify(items));
+    },
+    clearItemsFromStorage: function () {
+      localStorage.removeItem('items');
+    },
   };
 })();
 // Item Controller
@@ -317,6 +343,9 @@ const App = (function (ItemCtrl, StorageCtrl, UICtrl) {
     const totalCalories = ItemCtrl.getTotalCalories();
     // Add total calories to ui
     UICtrl.showTotalCalories(totalCalories);
+    // update LS
+    StorageCtrl.updateItemStorage(updatedItem);
+
     // Clear edit state
     UICtrl.clearEditState();
 
@@ -332,6 +361,7 @@ const App = (function (ItemCtrl, StorageCtrl, UICtrl) {
     const totalCalories = ItemCtrl.getTotalCalories();
     UICtrl.showTotalCalories(totalCalories);
     UICtrl.clearEditState();
+    StorageCtrl.deleteItemFromStorage(currentItem.id);
     e.preventDefault();
   };
   const clearAllItemsClick = function (e) {
@@ -344,6 +374,8 @@ const App = (function (ItemCtrl, StorageCtrl, UICtrl) {
     UICtrl.showTotalCalories(totalCalories);
     // remove all items from ui
     UICtrl.removeItems();
+    // Clear from localstorage
+    StorageCtrl.clearItemsFromStorage();
     // hide ul
     UICtrl.hideList();
   };
