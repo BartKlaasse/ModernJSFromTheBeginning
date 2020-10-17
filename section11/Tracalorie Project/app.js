@@ -1,5 +1,35 @@
 // Storage Controller
-
+const StorageCtrl = (function () {
+  return {
+    //Public functions
+    storeItem: function (item) {
+      let items;
+      // Check if any items in LS exist
+      if (localStorage.getItem('items') === null) {
+        items = [];
+        // push new item
+        items.push(item);
+        // save items
+        localStorage.setItem('items', JSON.stringify(items));
+      } else {
+        items = JSON.parse(localStorage.getItem('items'));
+        // Push new item
+        items.push(item);
+        //save items
+        localStorage.setItem('items', JSON.stringify(items));
+      }
+    },
+    getItemsFromStorage: function () {
+      let items;
+      if (localStorage.getItem('items') === null) {
+        items = [];
+      } else {
+        items = JSON.parse(localStorage.getItem('items'));
+      }
+      return items;
+    },
+  };
+})();
 // Item Controller
 const ItemCtrl = (function () {
   // Item constructor
@@ -10,11 +40,12 @@ const ItemCtrl = (function () {
   };
   // Data structure / state
   const data = {
-    items: [
-      //   { id: 0, name: 'Steak', calories: 1200 },
-      //   { id: 0, name: 'Cookie', calories: 750 },
-      //   { id: 2, name: 'Eggs', calories: 300 },
-    ],
+    // items: [
+    //   //   { id: 0, name: 'Steak', calories: 1200 },
+    //   //   { id: 0, name: 'Cookie', calories: 750 },
+    //   //   { id: 2, name: 'Eggs', calories: 300 },
+    // ],
+    items: StorageCtrl.getItemsFromStorage(),
     currentItem: null,
     totalCalories: 0,
   };
@@ -170,7 +201,7 @@ const UICtrl = (function () {
       document.querySelector(UISelectors.itemCaloriesInput).value = '';
     },
     addItemToForm: function () {
-      document.querySelector(UISelectors.itemNameInput).value = ItemCtrlItemCtrl.getCurrentItem().name;
+      document.querySelector(UISelectors.itemNameInput).value = ItemCtrl.getCurrentItem().name;
       document.querySelector(UISelectors.itemCaloriesInput).value = ItemCtrl.getCurrentItem().calories;
       UICtrl.showEditState();
     },
@@ -207,7 +238,7 @@ const UICtrl = (function () {
   };
 })();
 // App Controller
-const App = (function (ItemCtrl, UICtrl) {
+const App = (function (ItemCtrl, StorageCtrl, UICtrl) {
   // Load event listeners
   const loadEventListeners = function () {
     // Get UI selectors
@@ -247,6 +278,9 @@ const App = (function (ItemCtrl, UICtrl) {
       const totalCalories = ItemCtrl.getTotalCalories();
       // Add total calories to ui
       UICtrl.showTotalCalories(totalCalories);
+
+      // Store in localstorage
+      StorageCtrl.storeItem(newItem);
       //Clear input fields
       UICtrl.clearInput();
     }
@@ -337,7 +371,7 @@ const App = (function (ItemCtrl, UICtrl) {
       loadEventListeners();
     },
   };
-})(ItemCtrl, UICtrl);
+})(ItemCtrl, StorageCtrl, UICtrl);
 
 // Inititalize App
 App.init();
