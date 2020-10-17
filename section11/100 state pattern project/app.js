@@ -62,3 +62,6 @@ page.init();
 const home = document.getElementById('home'),
   about = document.getElementById('about'),
   contact = document.getElementById('contact');
+
+// Add event listeners
+home.addEventListener('click',(e)=>)
